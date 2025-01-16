@@ -3,7 +3,6 @@ package com.pablodomingos.classes.rps.servicos;
 import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,7 +16,7 @@ public class LoteRpsConsultaTest {
     LoteRpsConsulta consultaLote = new LoteRpsConsulta("AP1057893n16X103sfhF4RPm", FabricaDeObjetosFake.getRpsPrestador());
     String xml = consultaLote.converterParaXml();
     
-    Assert.assertEquals(xml, xmlTest);
+    Assert.assertEquals(xmlTest, xml);
   }
   
 }

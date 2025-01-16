@@ -1,14 +1,23 @@
 package com.pablodomingos.util;
 
+import java.io.Writer;
+
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+import com.thoughtworks.xstream.io.xml.CompactWriter;
+import com.thoughtworks.xstream.io.xml.XppDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 
 public class XStreamConfig {
     
     public static XStream createXStream() {
-        // Remover a sobrescrição de shouldEncodeReference
-        XStream xstream = new XStream(new DomDriver("UTF-8"));
+        // Use XppDriver with CompactWriter for no indentation
+        XStream xstream = new XStream(new XppDriver() {
+            @Override
+            public HierarchicalStreamWriter createWriter(Writer writer) {
+                return new CompactWriter(writer);
+            }
+        });
         
         // Allow any type to be deserialized
         xstream.addPermission(AnyTypePermission.ANY);

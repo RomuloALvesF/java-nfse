@@ -3,7 +3,6 @@ package com.pablodomingos.classes.rps.servicos;
 import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,7 +19,7 @@ public class LoteRpsConsultaSituacaoTest {
     XStream xstream = XStreamConfig.createXStream();
     String xml = consultaSituacaoLote.converterParaXml(xstream);
     
-    Assert.assertEquals(xml, xmlTest);
+    Assert.assertEquals(xmlTest, xml);
   }
   
 }

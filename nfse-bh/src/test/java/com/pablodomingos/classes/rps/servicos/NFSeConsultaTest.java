@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import org.apache.commons.io.IOUtils;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public class NFSeConsultaTest {
     NFSeConsulta consultaNFSe = new NFSeConsulta(FabricaDeObjetosFake.getRpsPrestador(), LocalDate.of(2017, 01, 12), LocalDate.of(2017, 01, 12));
     String xml = consultaNFSe.converterParaXml();
     
-    Assert.assertEquals(xml, xmlTest);
+    Assert.assertEquals(xmlTest, xml);
   }
   
 }
